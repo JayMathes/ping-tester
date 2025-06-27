@@ -10,7 +10,7 @@ with open('./ip_addresses.txt', 'r') as f:
 
 for elem in addresses:
     addr_info = elem[0]
-    return_code = system(f"ping -c 1 {addr_info}")
+    return_code = system(f"ping -c 1 -W1 {addr_info} >> /dev/null")
     results.append(return_code)
 
 
